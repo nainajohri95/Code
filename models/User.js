@@ -7,8 +7,8 @@ const users = [
 
   {
     id: "1838",
-    email: "rivi2@gmail.com",
-    password: "32sv777",
+    email: "naina@gmail.com",
+    password: "397",
   },
 ];
 

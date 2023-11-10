@@ -18,7 +18,7 @@ const signupController = async (req, res) => {
   //Gentare a random ID
   const id = Math.floor(Math.random() * 1000);
 
-  res.send("signupController");
+  // res.send("signupController");
 
   // Simulate user registration
   users.push({
@@ -61,7 +61,21 @@ const loginController = async (req, res) => {
   });
 };
 
+const getUserController = (req, res) => {
+  const id = req.params.id;
+
+  if (!id) {
+    res.status(403).send("User id required");
+    return;
+  }
+
+  const user = users.find((item) => item.id == id);
+
+  res.status(200).json(user);
+};
+
 module.exports = {
   signupController,
   loginController,
+  getUserController,
 };
