@@ -29,6 +29,11 @@ app.get("/", (req, res) => {
   });
 });
 
+app.get("/getRandomNum", (req, res) => {
+  const randomNum = Math.floor(Math.random() * 6) + 1;
+  res.json({ randomNum });
+});
+
 const PORT = process.env.PORT;
 console.log(process.env.SECRET_API_KEY);
 
